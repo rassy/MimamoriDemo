@@ -17,16 +17,5 @@ namespace MimamoriDemo
             InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // Main
-            // 
-            this.ClientSize = new System.Drawing.Size(943, 413);
-            this.Name = "Main";
-            this.ResumeLayout(false);
-
-        }
     }
 }
