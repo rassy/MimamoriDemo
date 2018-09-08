@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  
+  <!-- アップロードフォルダパス -->
+  <UploadFolder>
+    <Folder name="通常フォルダ" type="1">
+      <LocalPath>C:\ObyBox\Upload</LocalPath>
+      <BoxFolderId>0</BoxFolderId>
+      <IgnoreCreateZero>0</IgnoreCreateZero>
+    </Folder>
+    <Folder name="システム情報フォルダ" type="2">
+      <LocalPath>C:\ObyBox\SystemInfo</LocalPath>
+      <BoxFolderId>1</BoxFolderId>
+      <IgnoreCreateZero>0</IgnoreCreateZero>
+    </Folder>
+    <Folder name="エラーログフォルダ" type="3">
+      <LocalPath>C:\ObyBox\ErrorLogs</LocalPath>
+      <BoxFolderId>2</BoxFolderId>
+      <IgnoreCreateZero>1</IgnoreCreateZero>
+    </Folder>
+  </UploadFolder>
+  
+  <!-- クライアントID -->
+  <ClientId></ClientId>
+
+  <!-- クライアント秘密鍵 -->
+  <ClientSecret></ClientSecret>
+  
+  <!-- リダイレクトURL -->
+  <RedirectUrl>https://box-token-generator.herokuapp.com</RedirectUrl>
+  
+  <!-- トークンタイプ -->
+  <TokenType>bearer</TokenType>
+
+  <!-- フォルダ作成処理の並列実行数 -->
+  <DegreeOfParallelismOfFolder>5</DegreeOfParallelismOfFolder>
+  
+  <!-- ファイル作成処理の並列実行数 -->
+  <DegreeOfParallelismOfFile>30</DegreeOfParallelismOfFile>
+  
+  <!-- ファイルアップロード処理のタイムアウト時間（分）-->
+  <UploadTimeout>3</UploadTimeout>
+
+  <!-- アップロード除外ファイル名パターン -->
+  <IgnoreFilePattern></IgnoreFilePattern>
+  
+  <!-- ファイル走査待機間隔（指定ファイル数に1回1ミリ秒待機する） -->
+  <ScanInterval>1000</ScanInterval>
+  
+  <!-- ダウンロードプログラムの起動モード -->
+  <!-- 1:アーカイブセンターモード 2:事務所モード 3:データリカバリーモード -->
+  <DownloadMode>1</DownloadMode>
+  
+  <!-- フォルダIDリストファイルパス -->
+  <FolderIdListFilePath>C:\ObyBox\Download\FolderIdList.txt</FolderIdListFilePath>
+  
+  <!-- フォルダIDリストバックアップフォルダパス -->
+  <FolderIdBackupFolderPath>C:\ObyBox\Download\FolderBkup</FolderIdBackupFolderPath>
+  
+  <!-- ダウンロード先フォルダパス -->
+  <DownloadFolderPath>C:\ObyBox\Download</DownloadFolderPath>
+  
+  <!-- ダウンロード時の非同期ファイル処理数 -->
+  <AsyncFileDownloadNum>5</AsyncFileDownloadNum>
+
+  <!-- DB接続文字列 -->
+  <ConnectionString>data source=LOCALHOST\SQLEXPRESS;initial catalog=ObyBoxUpDownload;persist security info=True;user id=sa;password=(パスワード）;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient</ConnectionString>
+
+  <!-- ダウンロードリトライ回数 -->
+  <DownloadRetryCount>3</DownloadRetryCount>
+
+  <!-- ダウンロード例外発生時の待機時間（秒） -->
+  <DownloadExceptionWaitTime>300</DownloadExceptionWaitTime>
+  
+  <!-- プロキシ設定 -->
+  <Proxy>
+    <!-- URL -->
+    <URL></URL>
+    <!-- ユーザID -->
+    <UserId></UserId>
+    <!-- パスワード -->
+    <Password></Password>
+  </Proxy>
+  <!-- ローカルアイテム一覧に1回で登録する件数 -->
+  <LocalItemInfoInsertCount>10000</LocalItemInfoInsertCount>
+</configuration>
