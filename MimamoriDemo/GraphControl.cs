@@ -7,6 +7,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Drawing;
 using jp.co.brycen.MimamoriDemo.Properties;
+using System.Threading.Tasks;
 
 namespace jp.co.brycen.MimamoriDemo
 {
@@ -29,7 +30,6 @@ namespace jp.co.brycen.MimamoriDemo
             {
                 timer.Interval = 1000;
             }
-            timer.Enabled = true;
 
             try
             {
@@ -37,16 +37,27 @@ namespace jp.co.brycen.MimamoriDemo
             }
             catch
             {
-                deviceList = new string[] { "端末1", "端末2", "端末3" };
+                deviceList = new string[] { "端末１", "端末２", "端末３" };
             }
 
+            //Task.Delay(TimeSpan.FromSeconds(3));
             RefreshChart();
+            timer.Enabled = true;
         }
 
+        /// <summary>
+        /// タイマーによる発火
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Timer_Tick(object sender, EventArgs e)
         {
             RefreshChart();
         }
+
+        /// <summary>
+        /// グラフをリフレッシュする
+        /// </summary>
         private void RefreshChart()
         {
             if (deviceList.Length > 0)
@@ -62,6 +73,16 @@ namespace jp.co.brycen.MimamoriDemo
                 CreateChart(chart3, deviceList[2], pictureBox3, lblTemp3, lblHumid3, lblTimeStamp3);
             }
         }
+
+        /// <summary>
+        /// グラフを設定する
+        /// </summary>
+        /// <param name="chart"></param>
+        /// <param name="strIdName"></param>
+        /// <param name="pictureBox"></param>
+        /// <param name="lblTemp"></param>
+        /// <param name="lblHumid"></param>
+        /// <param name="lblTimeStamp"></param>
         private void CreateChart(Chart chart, string strIdName, PictureBox pictureBox, Label lblTemp, Label lblHumid, Label lblTimeStamp)
         {
             chart.Series.Clear();
@@ -101,38 +122,45 @@ namespace jp.co.brycen.MimamoriDemo
             chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY2.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
-            //chart.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.FixedCount;
             chart.ChartAreas[0].AxisX.Interval = 1;
 
             // データの読み込み
             var sourceDt = ImportCsvToDataTable(CreateDataTable(), Settings.Default["CsvFilePath"].ToString());
 
-            var rows = sourceDt.Select(string.Format("id = '{0}'", strIdName), "timestamp");
-
-            if (rows.Count() > 0)
+            if (sourceDt != null && sourceDt.Rows.Count > 0)
             {
-                switch(rows[rows.Count() - 1]["wbgt"].ToString())
+                var rows = sourceDt.Select(string.Format("id = '{0}' AND timestamp >='{1}'", strIdName, DateTime.Now.AddMinutes(-30).ToString("yyyy/MM/dd HH:mm:ss")), "timestamp");
+                //var rows = sourceDt.Select(string.Format("id = '{0}'", strIdName), "timestamp");
+
+                if (rows.Count() > 0)
                 {
-                    case "0":
-                        pictureBox.Image = Resources.L00_注意;
-                        break;
-                    case "1":
-                        pictureBox.Image = Resources.L01_警戒;
-                        break;
-                    case "2":
-                        pictureBox.Image = Resources.L02_厳重警戒;
-                        break;
-                    case "3":
-                        pictureBox.Image = Resources.L03_危険;
-                        break;
+                    switch (rows[rows.Count() - 1]["wbgt"].ToString())
+                    {
+                        case "0":
+                            pictureBox.Image = Resources.L00_注意;
+                            break;
+                        case "1":
+                            pictureBox.Image = Resources.L01_警戒;
+                            break;
+                        case "2":
+                            pictureBox.Image = Resources.L02_厳重警戒;
+                            break;
+                        case "3":
+                            pictureBox.Image = Resources.L03_危険;
+                            break;
+                    }
+
+                    lblTemp.Text = rows[rows.Count() - 1]["temp"].ToString();
+                    lblHumid.Text = rows[rows.Count() - 1]["humid"].ToString();
+                    DateTime datetime = DateTime.Parse(rows[rows.Count() - 1]["timestamp"].ToString());
+                    lblTimeStamp.Text = datetime.ToLongTimeString();
+
+                    // distinctかける
+                    DataView dv = rows.CopyToDataTable().DefaultView;
+                    DataTable dt = dv.ToTable(true, "id", "deviceid", "temp", "humid", "wbgt", "timestamp", "time");
+                    chart.DataSource = dt;
+                    dv.Dispose();
                 }
-
-                lblTemp.Text = rows[rows.Count() - 1]["temp"].ToString();
-                lblHumid.Text = rows[rows.Count() - 1]["humid"].ToString();
-                DateTime datetime = DateTime.Parse(rows[rows.Count() - 1]["timestamp"].ToString());
-                lblTimeStamp.Text = datetime.ToLongTimeString();
-
-                chart.DataSource = rows.CopyToDataTable();
             }
             sourceDt.Dispose();
         }

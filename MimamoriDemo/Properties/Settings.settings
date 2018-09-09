@@ -9,7 +9,7 @@
       <Value Profile="(Default)">3000</Value>
     </Setting>
     <Setting Name="DeviceList" Type="System.String" Scope="User">
-      <Value Profile="(Default)">端末1,端末2,端末3</Value>
+      <Value Profile="(Default)">端末１,端末２,端末３</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -49,7 +49,7 @@ namespace jp.co.brycen.MimamoriDemo.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("端末1,端末2,端末3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("端末１,端末２,端末３")]
         public string DeviceList {
             get {
                 return ((string)(this["DeviceList"]));
