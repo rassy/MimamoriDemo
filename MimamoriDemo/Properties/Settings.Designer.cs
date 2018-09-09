@@ -22,5 +22,29 @@ namespace jp.co.brycen.MimamoriDemo.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\P0828\\recv.csv")]
+        public string CsvFilePath {
+            get {
+                return ((string)(this["CsvFilePath"]));
+            }
+            set {
+                this["CsvFilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3000")]
+        public int GraphInterval {
+            get {
+                return ((int)(this["GraphInterval"]));
+            }
+            set {
+                this["GraphInterval"] = value;
+            }
+        }
     }
 }

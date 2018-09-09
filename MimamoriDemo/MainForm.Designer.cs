@@ -35,7 +35,7 @@
             // 
             this.graphControl1.Location = new System.Drawing.Point(992, 12);
             this.graphControl1.Name = "graphControl1";
-            this.graphControl1.Size = new System.Drawing.Size(900, 700);
+            this.graphControl1.Size = new System.Drawing.Size(900, 1017);
             this.graphControl1.TabIndex = 0;
             // 
             // MainForm

@@ -119,6 +119,33 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L01_警戒.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L01_警戒_顔のみ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L02_厳重警戒_顔のみ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L03_危険.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L03_危険_顔のみ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L02_厳重警戒.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L00_注意.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\L00_注意_顔のみ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\凡例.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
