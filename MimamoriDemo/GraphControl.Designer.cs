@@ -93,9 +93,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::jp.co.brycen.MimamoriDemo.Properties.Resources.凡例;
-            this.pictureBox4.Location = new System.Drawing.Point(35, 686);
+            this.pictureBox4.Location = new System.Drawing.Point(277, 723);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(841, 280);
+            this.pictureBox4.Size = new System.Drawing.Size(619, 262);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
@@ -162,9 +162,8 @@
             this.lblTimeStamp2.Font = new System.Drawing.Font("7barP", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeStamp2.Location = new System.Drawing.Point(86, 38);
             this.lblTimeStamp2.Name = "lblTimeStamp2";
-            this.lblTimeStamp2.Size = new System.Drawing.Size(75, 19);
+            this.lblTimeStamp2.Size = new System.Drawing.Size(0, 19);
             this.lblTimeStamp2.TabIndex = 7;
-            this.lblTimeStamp2.Text = "16:01:00";
             // 
             // label6
             // 
@@ -182,9 +181,8 @@
             this.lblHumid2.Font = new System.Drawing.Font("7barP", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHumid2.Location = new System.Drawing.Point(86, 5);
             this.lblHumid2.Name = "lblHumid2";
-            this.lblHumid2.Size = new System.Drawing.Size(63, 29);
+            this.lblHumid2.Size = new System.Drawing.Size(0, 29);
             this.lblHumid2.TabIndex = 5;
-            this.lblHumid2.Text = "24.8";
             // 
             // label9
             // 
@@ -202,9 +200,8 @@
             this.lblTemp2.Font = new System.Drawing.Font("7barP", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp2.Location = new System.Drawing.Point(3, 5);
             this.lblTemp2.Name = "lblTemp2";
-            this.lblTemp2.Size = new System.Drawing.Size(63, 29);
+            this.lblTemp2.Size = new System.Drawing.Size(0, 29);
             this.lblTemp2.TabIndex = 3;
-            this.lblTemp2.Text = "24.8";
             // 
             // label3
             // 
@@ -268,9 +265,8 @@
             this.lblTimeStamp3.Font = new System.Drawing.Font("7barP", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeStamp3.Location = new System.Drawing.Point(86, 38);
             this.lblTimeStamp3.Name = "lblTimeStamp3";
-            this.lblTimeStamp3.Size = new System.Drawing.Size(75, 19);
+            this.lblTimeStamp3.Size = new System.Drawing.Size(0, 19);
             this.lblTimeStamp3.TabIndex = 7;
-            this.lblTimeStamp3.Text = "16:01:00";
             // 
             // label12
             // 
@@ -288,9 +284,8 @@
             this.lblHumid3.Font = new System.Drawing.Font("7barP", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHumid3.Location = new System.Drawing.Point(86, 5);
             this.lblHumid3.Name = "lblHumid3";
-            this.lblHumid3.Size = new System.Drawing.Size(63, 29);
+            this.lblHumid3.Size = new System.Drawing.Size(0, 29);
             this.lblHumid3.TabIndex = 5;
-            this.lblHumid3.Text = "24.8";
             // 
             // label14
             // 
@@ -308,9 +303,8 @@
             this.lblTemp3.Font = new System.Drawing.Font("7barP", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp3.Location = new System.Drawing.Point(3, 5);
             this.lblTemp3.Name = "lblTemp3";
-            this.lblTemp3.Size = new System.Drawing.Size(63, 29);
+            this.lblTemp3.Size = new System.Drawing.Size(0, 29);
             this.lblTemp3.TabIndex = 3;
-            this.lblTemp3.Text = "24.8";
             // 
             // panel7
             // 
@@ -356,9 +350,8 @@
             this.lblTimeStamp1.Font = new System.Drawing.Font("7barP", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTimeStamp1.Location = new System.Drawing.Point(86, 38);
             this.lblTimeStamp1.Name = "lblTimeStamp1";
-            this.lblTimeStamp1.Size = new System.Drawing.Size(75, 19);
+            this.lblTimeStamp1.Size = new System.Drawing.Size(0, 19);
             this.lblTimeStamp1.TabIndex = 7;
-            this.lblTimeStamp1.Text = "16:01:00";
             // 
             // label7
             // 
@@ -376,9 +369,8 @@
             this.lblHumid1.Font = new System.Drawing.Font("7barP", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHumid1.Location = new System.Drawing.Point(86, 5);
             this.lblHumid1.Name = "lblHumid1";
-            this.lblHumid1.Size = new System.Drawing.Size(63, 29);
+            this.lblHumid1.Size = new System.Drawing.Size(0, 29);
             this.lblHumid1.TabIndex = 5;
-            this.lblHumid1.Text = "24.8";
             // 
             // label5
             // 
@@ -396,9 +388,8 @@
             this.lblTemp1.Font = new System.Drawing.Font("7barP", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTemp1.Location = new System.Drawing.Point(3, 5);
             this.lblTemp1.Name = "lblTemp1";
-            this.lblTemp1.Size = new System.Drawing.Size(63, 29);
+            this.lblTemp1.Size = new System.Drawing.Size(0, 29);
             this.lblTemp1.TabIndex = 3;
-            this.lblTemp1.Text = "24.8";
             // 
             // pictureBox1
             // 

@@ -153,6 +153,16 @@ namespace jp.co.brycen.MimamoriDemo.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap ブランドマーク {
+            get {
+                object obj = ResourceManager.GetObject("ブランドマーク", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap 凡例 {
             get {
                 object obj = ResourceManager.GetObject("凡例", resourceCulture);

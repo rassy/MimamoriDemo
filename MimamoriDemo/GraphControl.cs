@@ -122,9 +122,28 @@ namespace jp.co.brycen.MimamoriDemo
             chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY2.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
-            //chart.ChartAreas[0].AxisX.Interval = 1;
-            chart.ChartAreas[0].AxisY.Minimum = 10;
-            chart.ChartAreas[0].AxisY2.Minimum = 20;
+
+            string maxTemp = Settings.Default["MaxTemp"].ToString();
+            string minTemp = Settings.Default["MinTemp"].ToString();
+            string maxHumid = Settings.Default["MaxHumid"].ToString();
+            string minHumid = Settings.Default["MinHumid"].ToString();
+
+            if (maxTemp != "")
+            {
+                chart.ChartAreas[0].AxisY.Maximum = int.Parse(maxTemp);
+            }
+            if (minTemp != "")
+            {
+                chart.ChartAreas[0].AxisY.Minimum = int.Parse(minTemp);
+            }
+            if (maxHumid != "")
+            {
+                chart.ChartAreas[0].AxisY2.Maximum = int.Parse(maxHumid);
+            }
+            if (minHumid != "")
+            {
+                chart.ChartAreas[0].AxisY2.Minimum = int.Parse(minHumid);
+            }
             chart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
 
             // データの読み込み
@@ -132,7 +151,7 @@ namespace jp.co.brycen.MimamoriDemo
 
             if (sourceDt != null && sourceDt.Rows.Count > 0)
             {
-                var rows = sourceDt.Select(string.Format("id = '{0}' AND timestamp >='{1}'", strIdName, DateTime.Now.AddMinutes(-10).ToString("yyyy/MM/dd HH:mm:ss")), "timestamp");
+                var rows = sourceDt.Select(string.Format("id = '{0}' AND timestamp >='{1}'", strIdName, DateTime.Now.AddMinutes(int.Parse(Settings.Default["TargetMinutes"].ToString()) * -1).ToString("yyyy/MM/dd HH:mm:ss")), "timestamp");
                 //var rows = sourceDt.Select(string.Format("id = '{0}'", strIdName), "timestamp");
 
                 if (rows.Count() > 0)

@@ -30,6 +30,8 @@
         {
             this.graphControl1 = new jp.co.brycen.MimamoriDemo.GraphControl();
             this.ucDynamicFlow1 = new jp.co.brycen.MimamoriDemo.UcDynamicFlow();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // graphControl1
@@ -47,13 +49,25 @@
             this.ucDynamicFlow1.Size = new System.Drawing.Size(770, 950);
             this.ucDynamicFlow1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::jp.co.brycen.MimamoriDemo.Properties.Resources.ブランドマーク;
+            this.pictureBox1.Location = new System.Drawing.Point(858, 703);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(453, 276);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ucDynamicFlow1);
             this.Controls.Add(this.graphControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -62,6 +76,7 @@
 
         private GraphControl graphControl1;
         private UcDynamicFlow ucDynamicFlow1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

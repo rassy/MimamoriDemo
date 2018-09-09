@@ -70,5 +70,65 @@ namespace jp.co.brycen.MimamoriDemo.Properties {
                 this["CsvFilePath2"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public string TargetMinutes {
+            get {
+                return ((string)(this["TargetMinutes"]));
+            }
+            set {
+                this["TargetMinutes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MaxTemp {
+            get {
+                return ((string)(this["MaxTemp"]));
+            }
+            set {
+                this["MaxTemp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public string MinTemp {
+            get {
+                return ((string)(this["MinTemp"]));
+            }
+            set {
+                this["MinTemp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MaxHumid {
+            get {
+                return ((string)(this["MaxHumid"]));
+            }
+            set {
+                this["MaxHumid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public string MinHumid {
+            get {
+                return ((string)(this["MinHumid"]));
+            }
+            set {
+                this["MinHumid"] = value;
+            }
+        }
     }
 }

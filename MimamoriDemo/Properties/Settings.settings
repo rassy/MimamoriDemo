@@ -14,5 +14,20 @@
     <Setting Name="CsvFilePath2" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\P0828\device_state.csv</Value>
     </Setting>
+    <Setting Name="TargetMinutes" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="MaxTemp" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MinTemp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="MaxHumid" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MinHumid" Type="System.String" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
