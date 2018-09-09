@@ -38,12 +38,24 @@ namespace jp.co.brycen.MimamoriDemo.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("3000")]
-        public int GraphInterval {
+        public string GraphInterval {
             get {
-                return ((int)(this["GraphInterval"]));
+                return ((string)(this["GraphInterval"]));
             }
             set {
                 this["GraphInterval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("端末1,端末2,端末3")]
+        public string DeviceList {
+            get {
+                return ((string)(this["DeviceList"]));
+            }
+            set {
+                this["DeviceList"] = value;
             }
         }
     }

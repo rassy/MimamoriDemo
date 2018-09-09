@@ -5,8 +5,11 @@
     <Setting Name="CsvFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\P0828\recv.csv</Value>
     </Setting>
-    <Setting Name="GraphInterval" Type="System.Int32" Scope="User">
+    <Setting Name="GraphInterval" Type="System.String" Scope="User">
       <Value Profile="(Default)">3000</Value>
+    </Setting>
+    <Setting Name="DeviceList" Type="System.String" Scope="User">
+      <Value Profile="(Default)">端末1,端末2,端末3</Value>
     </Setting>
   </Settings>
 </SettingsFile>

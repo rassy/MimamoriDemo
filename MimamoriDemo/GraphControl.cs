@@ -12,24 +12,35 @@ namespace jp.co.brycen.MimamoriDemo
 {
     public partial class GraphControl : UserControl
     {
+        // 端末リスト
+        string[] deviceList;
+
         public GraphControl()
         {
             InitializeComponent();
-
-            RefreshChart();
 
             Timer timer = new Timer();
             timer.Tick += Timer_Tick;
             try
             {
-                //timer.Interval = int.Parse(Settings.Default["GraphInterval"].ToString());
-                timer.Interval = 3000;
+                timer.Interval = int.Parse(Settings.Default["GraphInterval"].ToString());
             }
             catch
             {
                 timer.Interval = 1000;
             }
             timer.Enabled = true;
+
+            try
+            {
+                deviceList = Settings.Default["DeviceList"].ToString().Split(',');
+            }
+            catch
+            {
+                deviceList = new string[] { "端末1", "端末2", "端末3" };
+            }
+
+            RefreshChart();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -38,9 +49,18 @@ namespace jp.co.brycen.MimamoriDemo
         }
         private void RefreshChart()
         {
-            CreateChart(chart1, "端末１", pictureBox1, lblTemp1, lblHumid1, lblTimeStamp1);
-            CreateChart(chart2, "端末２", pictureBox2, lblTemp2, lblHumid2, lblTimeStamp2);
-            CreateChart(chart3, "端末３", pictureBox3, lblTemp3, lblHumid3, lblTimeStamp3);
+            if (deviceList.Length > 0)
+            {
+                CreateChart(chart1, deviceList[0], pictureBox1, lblTemp1, lblHumid1, lblTimeStamp1);
+            }
+            if (deviceList.Length > 1)
+            {
+                CreateChart(chart2, deviceList[1], pictureBox2, lblTemp2, lblHumid2, lblTimeStamp2);
+            }
+            if (deviceList.Length > 2)
+            {
+                CreateChart(chart3, deviceList[2], pictureBox3, lblTemp3, lblHumid3, lblTimeStamp3);
+            }
         }
         private void CreateChart(Chart chart, string strIdName, PictureBox pictureBox, Label lblTemp, Label lblHumid, Label lblTimeStamp)
         {
@@ -52,7 +72,7 @@ namespace jp.co.brycen.MimamoriDemo
             var tempSeries = new Series();
             tempSeries.ChartType = SeriesChartType.Column;
             tempSeries.LegendText = "温度";
-            tempSeries.XValueMember = "timestamp";
+            tempSeries.XValueMember = "time";
             tempSeries.YValueMembers = "temp";
             tempSeries.YAxisType = AxisType.Primary;
 
@@ -62,7 +82,7 @@ namespace jp.co.brycen.MimamoriDemo
             humidSeries.LegendText = "湿度";
             humidSeries.BorderWidth = 2;
             humidSeries.MarkerStyle = MarkerStyle.Circle;
-            humidSeries.XValueMember = "timestamp";
+            humidSeries.XValueMember = "time";
             humidSeries.YValueMembers = "humid";
             humidSeries.BorderColor = Color.Red;
             humidSeries.Color = Color.Red;
@@ -77,15 +97,17 @@ namespace jp.co.brycen.MimamoriDemo
             chart.Series.Add(tempSeries);
             chart.Series.Add(humidSeries);
 
-            chart.ChartAreas[0].AxisX.TextOrientation = TextOrientation.Horizontal;
+            chart.ChartAreas[0].AxisX.IsLabelAutoFit = true;
             chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY2.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
+            //chart.ChartAreas[0].AxisX.IntervalAutoMode = IntervalAutoMode.FixedCount;
+            chart.ChartAreas[0].AxisX.Interval = 1;
 
             // データの読み込み
             var sourceDt = ImportCsvToDataTable(CreateDataTable(), Settings.Default["CsvFilePath"].ToString());
 
-            var rows = sourceDt.Select(string.Format("id = '{0}'", strIdName));
+            var rows = sourceDt.Select(string.Format("id = '{0}'", strIdName), "timestamp");
 
             if (rows.Count() > 0)
             {
@@ -128,6 +150,7 @@ namespace jp.co.brycen.MimamoriDemo
             dt.Columns.Add("humid", typeof(double));
             dt.Columns.Add("wbgt", typeof(int));
             dt.Columns.Add("timestamp", typeof(DateTime));
+            dt.Columns.Add("time", typeof(string));
             return dt;
         }
 
@@ -147,10 +170,11 @@ namespace jp.co.brycen.MimamoriDemo
                     {
                         string[] rows = Regex.Split(sr.ReadLine(), ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
                         DataRow dr = dt.NewRow();
-                        for (int i = 0; i < dt.Columns.Count; i++)
+                        for (int i = 0; i < dt.Columns.Count - 1; i++)
                         {
                             dr[i] = rows[i];
                         }
+                        dr[dt.Columns.Count - 1] = DateTime.Parse(rows[dt.Columns.Count - 2].ToString()).ToShortTimeString();
                         dt.Rows.Add(dr);
                     }
                 }
