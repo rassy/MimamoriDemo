@@ -1,4 +1,4 @@
-﻿namespace MimamoriDemo
+﻿namespace jp.co.brycen.MimamoriDemo
 {
     partial class MainForm
     {
@@ -28,17 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.graphControl1 = new jp.co.brycen.MimamoriDemo.GraphControl();
             this.SuspendLayout();
+            // 
+            // graphControl1
+            // 
+            this.graphControl1.Location = new System.Drawing.Point(992, 12);
+            this.graphControl1.Name = "graphControl1";
+            this.graphControl1.Size = new System.Drawing.Size(900, 700);
+            this.graphControl1.TabIndex = 0;
             // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(943, 413);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.graphControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private GraphControl graphControl1;
     }
 }
 

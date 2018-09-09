@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace MimamoriDemo
+namespace jp.co.brycen.MimamoriDemo
 {
     public partial class MainForm : Form
     {
@@ -8,6 +8,5 @@ namespace MimamoriDemo
         {
             InitializeComponent();
         }
-
     }
 }
