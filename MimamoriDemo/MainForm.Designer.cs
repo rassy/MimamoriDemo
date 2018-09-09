@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.graphControl1 = new jp.co.brycen.MimamoriDemo.GraphControl();
+            this.ucDynamicFlow1 = new jp.co.brycen.MimamoriDemo.UcDynamicFlow();
             this.SuspendLayout();
             // 
             // graphControl1
@@ -38,9 +39,18 @@
             this.graphControl1.Size = new System.Drawing.Size(900, 1017);
             this.graphControl1.TabIndex = 0;
             // 
+            // ucDynamicFlow1
+            // 
+            this.ucDynamicFlow1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ucDynamicFlow1.Location = new System.Drawing.Point(69, 18);
+            this.ucDynamicFlow1.Name = "ucDynamicFlow1";
+            this.ucDynamicFlow1.Size = new System.Drawing.Size(770, 950);
+            this.ucDynamicFlow1.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.ucDynamicFlow1);
             this.Controls.Add(this.graphControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
@@ -51,6 +61,7 @@
         #endregion
 
         private GraphControl graphControl1;
+        private UcDynamicFlow ucDynamicFlow1;
     }
 }
 
