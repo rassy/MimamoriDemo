@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GraphControl));
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -85,9 +85,9 @@
             // 
             this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
             this.vScrollBar1.Enabled = false;
-            this.vScrollBar1.Location = new System.Drawing.Point(877, 0);
+            this.vScrollBar1.Location = new System.Drawing.Point(875, 0);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 668);
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 666);
             this.vScrollBar1.TabIndex = 2;
             // 
             // pictureBox4
@@ -112,8 +112,8 @@
             // 
             // chart2
             // 
-            legend4.Name = "Legend1";
-            this.chart2.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.chart2.Legends.Add(legend1);
             this.chart2.Location = new System.Drawing.Point(173, 14);
             this.chart2.Name = "chart2";
             this.chart2.Size = new System.Drawing.Size(683, 222);
@@ -192,7 +192,7 @@
             this.label9.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(60, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 17);
+            this.label9.Size = new System.Drawing.Size(22, 17);
             this.label9.TabIndex = 4;
             this.label9.Text = "℃";
             // 
@@ -218,8 +218,8 @@
             // 
             // chart3
             // 
-            legend5.Name = "Legend1";
-            this.chart3.Legends.Add(legend5);
+            legend2.Name = "Legend1";
+            this.chart3.Legends.Add(legend2);
             this.chart3.Location = new System.Drawing.Point(173, 14);
             this.chart3.Name = "chart3";
             this.chart3.Size = new System.Drawing.Size(683, 222);
@@ -298,7 +298,7 @@
             this.label14.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(60, 5);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(20, 17);
+            this.label14.Size = new System.Drawing.Size(22, 17);
             this.label14.TabIndex = 4;
             this.label14.Text = "℃";
             // 
@@ -314,6 +314,7 @@
             // 
             // panel7
             // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.panel1);
             this.panel7.Controls.Add(this.panel2);
             this.panel7.Controls.Add(this.vScrollBar1);
@@ -385,7 +386,7 @@
             this.label5.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(60, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 17);
+            this.label5.Size = new System.Drawing.Size(22, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "℃";
             // 
@@ -421,8 +422,8 @@
             // 
             // chart1
             // 
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            legend3.Name = "Legend1";
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(173, 14);
             this.chart1.Name = "chart1";
             this.chart1.Size = new System.Drawing.Size(683, 222);

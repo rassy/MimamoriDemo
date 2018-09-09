@@ -34,7 +34,7 @@
             // 
             // graphControl1
             // 
-            this.graphControl1.Location = new System.Drawing.Point(992, 12);
+            this.graphControl1.Location = new System.Drawing.Point(941, 18);
             this.graphControl1.Name = "graphControl1";
             this.graphControl1.Size = new System.Drawing.Size(900, 1017);
             this.graphControl1.TabIndex = 0;
@@ -42,7 +42,7 @@
             // ucDynamicFlow1
             // 
             this.ucDynamicFlow1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ucDynamicFlow1.Location = new System.Drawing.Point(69, 18);
+            this.ucDynamicFlow1.Location = new System.Drawing.Point(83, 18);
             this.ucDynamicFlow1.Name = "ucDynamicFlow1";
             this.ucDynamicFlow1.Size = new System.Drawing.Size(770, 950);
             this.ucDynamicFlow1.TabIndex = 1;

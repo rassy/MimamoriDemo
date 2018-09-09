@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using jp.co.brycen.MimamoriDemo.Properties;
 
 namespace jp.co.brycen.MimamoriDemo
 {
@@ -63,7 +64,7 @@ namespace jp.co.brycen.MimamoriDemo
         {
             this.m_lstDeviceState.Clear();
 
-            StreamReader reader = new StreamReader(@"C:\Users\P0828\device_state.csv", Encoding.GetEncoding("Shift_JIS"));
+            StreamReader reader = new StreamReader(Settings.Default["CsvFilePath2"].ToString(), Encoding.GetEncoding("Shift_JIS"));
 
             try
             {

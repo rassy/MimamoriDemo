@@ -122,14 +122,17 @@ namespace jp.co.brycen.MimamoriDemo
             chart.ChartAreas[0].AxisX.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
             chart.ChartAreas[0].AxisY2.LabelStyle.Font = new Font("ＭＳ ゴシック", 8);
-            chart.ChartAreas[0].AxisX.Interval = 1;
+            //chart.ChartAreas[0].AxisX.Interval = 1;
+            chart.ChartAreas[0].AxisY.Minimum = 10;
+            chart.ChartAreas[0].AxisY2.Minimum = 20;
+            chart.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
 
             // データの読み込み
             var sourceDt = ImportCsvToDataTable(CreateDataTable(), Settings.Default["CsvFilePath"].ToString());
 
             if (sourceDt != null && sourceDt.Rows.Count > 0)
             {
-                var rows = sourceDt.Select(string.Format("id = '{0}' AND timestamp >='{1}'", strIdName, DateTime.Now.AddMinutes(-30).ToString("yyyy/MM/dd HH:mm:ss")), "timestamp");
+                var rows = sourceDt.Select(string.Format("id = '{0}' AND timestamp >='{1}'", strIdName, DateTime.Now.AddMinutes(-10).ToString("yyyy/MM/dd HH:mm:ss")), "timestamp");
                 //var rows = sourceDt.Select(string.Format("id = '{0}'", strIdName), "timestamp");
 
                 if (rows.Count() > 0)

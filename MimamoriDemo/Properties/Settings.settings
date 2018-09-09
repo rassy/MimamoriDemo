@@ -11,5 +11,8 @@
     <Setting Name="DeviceList" Type="System.String" Scope="User">
       <Value Profile="(Default)">端末１,端末２,端末３</Value>
     </Setting>
+    <Setting Name="CsvFilePath2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\P0828\device_state.csv</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

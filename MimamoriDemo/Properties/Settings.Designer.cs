@@ -58,5 +58,17 @@ namespace jp.co.brycen.MimamoriDemo.Properties {
                 this["DeviceList"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\P0828\\device_state.csv")]
+        public string CsvFilePath2 {
+            get {
+                return ((string)(this["CsvFilePath2"]));
+            }
+            set {
+                this["CsvFilePath2"] = value;
+            }
+        }
     }
 }
