@@ -8,5 +8,23 @@ namespace jp.co.brycen.MimamoriDemo
         {
             InitializeComponent();
         }
+
+        private void OnPcdMenu_Click(object sender, System.EventArgs e)
+        {
+            PcdFrom pcd = new PcdFrom();
+            pcd.Show();
+        }
+
+        private void OnLcdMenu_Click(object sender, System.EventArgs e)
+        {
+            LCDForm pcd = new LCDForm();
+            pcd.Show();
+        }
+
+        private void OnPctMenu_Click(object sender, System.EventArgs e)
+        {
+            PctForm pct = new PctForm();
+            pct.Show();
+        }
     }
 }

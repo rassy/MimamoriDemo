@@ -29,5 +29,8 @@
     <Setting Name="MinHumid" Type="System.String" Scope="User">
       <Value Profile="(Default)">20</Value>
     </Setting>
+    <Setting Name="CsvFilePath3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\P0828\supply_state.csv</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

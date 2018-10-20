@@ -65,11 +65,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsDeviceState.cs" />
+    <Compile Include="ClsWarehouseSupplyState.cs" />
     <Compile Include="GraphControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="GraphControl.Designer.cs">
       <DependentUpon>GraphControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LCDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LCDForm.Designer.cs">
+      <DependentUpon>LCDForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -77,8 +84,21 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PcdFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PcdFrom.Designer.cs">
+      <DependentUpon>PcdFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PctForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PctForm.Designer.cs">
+      <DependentUpon>PctForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="UcDynamicFlow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -88,8 +108,17 @@
     <EmbeddedResource Include="GraphControl.resx">
       <DependentUpon>GraphControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LCDForm.resx">
+      <DependentUpon>LCDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PcdFrom.resx">
+      <DependentUpon>PcdFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PctForm.resx">
+      <DependentUpon>PctForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,9 +130,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UcDynamicFlow.resx">
-      <DependentUpon>UcDynamicFlow.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -161,6 +187,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ブランドマーク.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PCDFrom1.png" />
+    <None Include="Resources\LCDForm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PCTFrom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S00_NimotsuPalletBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S01_CarForkLift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S03_CarTruck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S04_JUUKI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\S05_TOOL.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
